@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class Drawer extends StatelessWidget {
+class MyDrawer extends StatelessWidget {
   //final appTitle = 'Drawer Demo';
 
   @override
