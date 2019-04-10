@@ -16,18 +16,21 @@ class TabbedAppBarSample extends StatelessWidget {
         length: choices.length,
         child: Scaffold(
           drawer: MyDrawer(),
-          appBar: AppBar(
-            title: const Text('Tabbed AppBar'),
-            bottom: MyTabBar(),
-            // TabBar(
-            //   isScrollable: true,
-            //   tabs: choices.map((Choice choice) {
-            //     return Tab(
-            //       text: choice.title,
-            //       icon: Icon(choice.icon),
-            //     );
-            //   }).toList(),
-            // ),
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(100.0),
+            child: AppBar(
+              title: const Text('Tabbed AppBar'),
+              bottom: MyTabBar(),
+              // TabBar(
+              //   isScrollable: true,
+              //   tabs: choices.map((Choice choice) {
+              //     return Tab(
+              //       text: choice.title,
+              //       icon: Icon(choice.icon),
+              //     );
+              //   }).toList(),
+              // ),
+            ),
           ),
           body: MyTabBarView(),
           // TabBarView(
