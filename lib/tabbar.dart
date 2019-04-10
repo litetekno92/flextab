@@ -2,7 +2,7 @@ import 'package:flextab/choice.dart';
 import 'package:flutter/material.dart';
 
 
-class MyTabBar extends StatelessWidget {
+class MyTabBar extends StatelessWidget implements PreferredSizeWidget {
   //final appTitle = 'Drawer Demo';
 
   @override
@@ -21,4 +21,8 @@ class MyTabBar extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => new Size.fromHeight(kToolbarHeight);
 }

@@ -4,6 +4,8 @@
 
 import 'package:flextab/choice.dart';
 import 'package:flextab/drawer.dart';
+import 'package:flextab/tabbar.dart';
+import 'package:flextab/tabbarview.dart';
 import 'package:flutter/material.dart';
 
 class TabbedAppBarSample extends StatelessWidget {
@@ -14,61 +16,28 @@ class TabbedAppBarSample extends StatelessWidget {
         length: choices.length,
         child: Scaffold(
           drawer: MyDrawer(),
-          // drawer: Drawer(
-          //   // Add a ListView to the drawer. This ensures the user can scroll
-          //   // through the options in the Drawer if there isn't enough vertical
-          //   // space to fit everything.
-          //   child: ListView(
-          //     // Important: Remove any padding from the ListView.
-          //     padding: EdgeInsets.zero,
-          //     children: <Widget>[
-          //       DrawerHeader(
-          //         child: Text('Drawer Header'),
-          //         decoration: BoxDecoration(
-          //           color: Colors.blue,
-          //         ),
-          //       ),
-          //       ListTile(
-          //         title: Text('Item 1'),
-          //         onTap: () {
-          //           // Update the state of the app
-          //           // ...
-          //           // Then close the drawer
-          //           Navigator.pop(context);
-          //         },
-          //       ),
-          //       ListTile(
-          //         title: Text('Item 2'),
-          //         onTap: () {
-          //           // Update the state of the app
-          //           // ...
-          //           // Then close the drawer
-          //           Navigator.pop(context);
-          //         },
-          //       ),
-          //     ],
-          //   ),
-          // ),
           appBar: AppBar(
             title: const Text('Tabbed AppBar'),
-            bottom: TabBar(
-              isScrollable: true,
-              tabs: choices.map((Choice choice) {
-                return Tab(
-                  text: choice.title,
-                  icon: Icon(choice.icon),
-                );
-              }).toList(),
-            ),
+            bottom: MyTabBar(),
+            // TabBar(
+            //   isScrollable: true,
+            //   tabs: choices.map((Choice choice) {
+            //     return Tab(
+            //       text: choice.title,
+            //       icon: Icon(choice.icon),
+            //     );
+            //   }).toList(),
+            // ),
           ),
-          body: TabBarView(
-            children: choices.map((Choice choice) {
-              return Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: ChoiceCard(choice: choice),
-              );
-            }).toList(),
-          ),
+          body: MyTabBarView(),
+          // TabBarView(
+          //   children: choices.map((Choice choice) {
+          //     return Padding(
+          //       padding: const EdgeInsets.all(16.0),
+          //       child: ChoiceCard(choice: choice),
+          //     );
+          //   }).toList(),
+          // ),
         ),
       ),
     );
